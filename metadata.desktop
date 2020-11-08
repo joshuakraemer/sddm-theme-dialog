@@ -1,0 +1,14 @@
+[SddmGreeterTheme]
+Name=Dialog
+Description=SDDM theme with classic login dialog
+Author=Joshua Krämer
+Copyright=(c) 2020, Joshua Krämer
+License=ISC
+Type=sddm-theme
+Version=0.1
+Website=https://github.com/joshuakraemer/sddm-theme-dialog
+Screenshot=screenshot.png
+MainScript=Main.qml
+ConfigFile=theme.conf
+Theme-Id=dialog
+Theme-API=2.0
