@@ -15,8 +15,8 @@ Rectangle {
 		property var buttonSpacings: [1, 6, 4, 8]
 		property var spacings: [8, 6, 12, 12]
 		property int id: {
-			let index = buttonSpacings.indexOf(buttons.spacing);
-			index < 0 ? 0 : index;
+			let index = buttonSpacings.indexOf(buttons.spacing)
+			index < 0 ? 0 : index
 		}
 		property int spacing: spacings[id]
 	}
@@ -30,8 +30,8 @@ Rectangle {
 
 		function onLoginFailed() {
 			messageDisplay.text = textConstants.loginFailed
-			passwordField.text = ""
-			passwordField.focus = true
+			passwordEntry.text = ""
+			passwordEntry.focus = true
 		}
 	}
 
@@ -69,7 +69,7 @@ Rectangle {
 
 			Button {
 				text: textConstants.login
-				onClicked: sddm.login(userNameField.text, passwordField.text, sessionField.index)
+				onClicked: sddm.login(userNameEntry.text, passwordEntry.text, sessionEntry.index)
 			}
 
 			Button {
@@ -93,10 +93,10 @@ Rectangle {
 			}
 
 			TextField {
-				id: userNameField
+				id: userNameEntry
 				width: height*10
 				text: userModel.lastUser
-				onAccepted: sddm.login(userNameField.text, passwordField.text, sessionField.index)
+				onAccepted: sddm.login(userNameEntry.text, passwordEntry.text, sessionEntry.index)
 			}
 
 			Label {
@@ -104,11 +104,11 @@ Rectangle {
 			}
 
 			TextField {
-				id: passwordField
+				id: passwordEntry
 				width: height*10
 				echoMode: TextInput.Password
 				focus: true
-				onAccepted: sddm.login(userNameField.text, passwordField.text, sessionField.index)
+				onAccepted: sddm.login(userNameEntry.text, passwordEntry.text, sessionEntry.index)
 			}
 
 			Label {
@@ -116,9 +116,9 @@ Rectangle {
 			}
 
 			ComboBox {
-				id: sessionField
+				id: sessionEntry
 				width: height*10
-				height: userNameField.height
+				height: userNameEntry.height
 				model: sessionModel
 				textRole: "name"
 				currentIndex: sessionModel.lastIndex
