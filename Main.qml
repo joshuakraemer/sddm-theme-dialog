@@ -29,7 +29,7 @@ Rectangle {
 		target: sddm
 
 		function onLoginFailed() {
-			messageDisplay.text = textConstants.loginFailed
+			dialog.title = textConstants.loginFailed
 			passwordEntry.text = ""
 			passwordEntry.focus = true
 		}
@@ -69,7 +69,7 @@ Rectangle {
 
 			Button {
 				text: textConstants.login
-				onClicked: sddm.login(userNameEntry.text, passwordEntry.text, sessionEntry.index)
+				onClicked: sddm.login(userNameEntry.text, passwordEntry.text, sessionEntry.currentIndex)
 			}
 
 			Button {
@@ -96,7 +96,7 @@ Rectangle {
 				id: userNameEntry
 				width: height*10
 				text: userModel.lastUser
-				onAccepted: sddm.login(userNameEntry.text, passwordEntry.text, sessionEntry.index)
+				onAccepted: sddm.login(userNameEntry.text, passwordEntry.text, sessionEntry.currentIndex)
 			}
 
 			Label {
@@ -108,7 +108,7 @@ Rectangle {
 				width: height*10
 				echoMode: TextInput.Password
 				focus: true
-				onAccepted: sddm.login(userNameEntry.text, passwordEntry.text, sessionEntry.index)
+				onAccepted: sddm.login(userNameEntry.text, passwordEntry.text, sessionEntry.currentIndex)
 			}
 
 			Label {
